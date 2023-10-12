@@ -27,3 +27,7 @@ GROUP BY 1
 ORDER BY Avgmonthlyincome DESC
 LIMIT 5
 
+-- Loan Status with Percentage Breakdown
+SELECT loanstatus, COUNT(*) AS loancount, (COUNT(*) * 100 / (SELECT COUNT(*) FROM loan)) AS percentage
+FROM loan
+GROUP BY 1
